@@ -2,8 +2,6 @@ import argparse
 import concurrent.futures
 import os
 
-import sacrebleu
-from rouge_score import rouge_scorer
 from tqdm import tqdm
 
 
