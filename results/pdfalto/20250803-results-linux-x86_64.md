@@ -4,6 +4,9 @@
 - pdfalto-0b01931: the pdfalto version from the master branch (https://github.com/kermitt2/pdfalto)
 - pdfalto-aba6cec: the pdfalto version from the xpdf branch (https://github.com/kermitt2/pdfalto/pull/210)
 
+A positive value in the "Differences (Averages) run 1 - run 2" table means that run 1 
+has more data (e.g., characters or tokens) than run 2 for that metric. 
+A negative value would mean run 2 has more.
 
 # Results Grobid vs 0b01931 (master branch)
 
@@ -70,3 +73,5 @@ python scripts/text_comparison.py  --run1 ../../pdfalto/output/pdfalto-aba6cec/ 
 | Chars (no spaces) | 0.0                | 0.0       | -0.379                | -0.008234688625836336 |
 | Chars (spaces)    | -8.113821138211382 | -2.409    | -7.4365               | -1.9732372619660319   |
 | Tokens            | -8.113821138211382 | -2.409    | -7.0575               | -1.9650025733401957   |
+
+Conclusion here: XPDF branch extracts more characters and tokens than the master branch.

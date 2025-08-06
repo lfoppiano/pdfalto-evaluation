@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export PDFALTO_PATH=/Volumes/ExtremePro/sciencialab/dimensions/pdfalto-evaluation/versions/pdfalto-0.6-8cf749a/mac/arm64
-export PDFALTO_XSLT=/Users/lfoppiano/development/github/pdfalto/schema/alto2txt.xsl
+export PDFALTO_PATH=/Volumes/ExtremePro/sciencialab/dimensions/pdfalto/pdfalto-evaluation/versions/pdfalto-0b01931/pdfalto/mac/arm64
+export PDFALTO_XSLT=/Users/lfoppiano/development/projects/pdfalto/schema/alto2txt.xsl
 
 # Function to process PDF files
 process_pdf_files() {

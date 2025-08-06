@@ -51,7 +51,7 @@ python scripts/text_comparison.py --run1 ../output-pdfalto/pdfalto-aba6cec-mac-a
 # pdfalto (master) vs pdfalto (xpdf branch)
 
 ```shell
-python scripts/text_comparison.py --run1 ../output-pdfalto/pdfalto-aba6cec-mac-arm64 --run2 ../output-pdfalto/pdfalto-0b01931-mac-arm64
+python scripts/text_comparison.py --run1 ../output-pdfalto/pdfalto-0b01931-mac-arm64 --run2 ../output-pdfalto/pdfalto-aba6cec-mac-arm64
 ```
 
 ## Matching Documents

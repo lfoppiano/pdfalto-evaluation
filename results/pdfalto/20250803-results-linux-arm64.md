@@ -70,3 +70,4 @@ python scripts/text_comparison.py --run1 ../output-pdfalto/pdfalto-0b01931-linux
 | Chars (spaces)    | -2.306    | -8.365853658536585 | -8.064                | -2.0102933607822955   |
 | Tokens            | -2.306    | -8.365853658536585 | -7.683                | -2.0020586721564593   |
 
+Conclusion here: XPDF branch extracts more characters and tokens than the master branch.
