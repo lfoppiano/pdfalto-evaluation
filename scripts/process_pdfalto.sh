@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PDFALTO_XSLT=/data/workspace/lfoppiano/pdfalto/sources/pdfalto-main/schema/alto2txt.xsl
-
 # Function to process PDF files
 process_pdf_files() {
   local input_dir="$1"
@@ -22,7 +20,6 @@ process_pdf_files() {
       echo "Processing $entry"
       local filename=$(basename "$entry")
       ${pdfalto_path}/./pdfalto -noImageInline -fullFontName -noImage -readingOrder "$entry" "$output_dir/${filename%.pdf}.xml"
-      xsltproc ${PDFALTO_XSLT} "$output_dir/${filename%.pdf}.xml" > "$output_dir/${filename%.pdf}.txt"
     fi
   done
 }

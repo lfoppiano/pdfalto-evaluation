@@ -192,14 +192,14 @@ def compute_differences(document_output_with_average):
     return aggregated_data
 
 
-def find_greatest_differences(documents_output):
+def print_largest_differences(documents_output):
     for process_type, process in documents_output.items():
         print(process_type)
         for corpus, documents in process.items():
             print(f"\t{corpus}")
             sorted_by_diff = sorted(
                 documents['processed'].items(),
-                key=lambda x: x[1]['stats']['diff_chars_no_spaces']
+                key=lambda x: x[1]['stats']['diff_chars_spaces']
             )
 
             sorted_by_diff_tokens = sorted(
@@ -207,10 +207,10 @@ def find_greatest_differences(documents_output):
                 key=lambda x: x[1]['stats']['diff_tokens']
             )
 
-            output_neg = [f"\n\t\t\t -{item[0]}: {item[1]['stats']['diff_chars_no_spaces']}" for item in
+            output_neg = [f"\n\t\t\t -{item[0]}: {item[1]['stats']['diff_chars_spaces']}" for item in
                           sorted_by_diff[:2]]
             print("".join(output_neg))
-            output_pos = [f"\n\t\t\t -{item[0]}: {item[1]['stats']['diff_chars_no_spaces']}" for item in
+            output_pos = [f"\n\t\t\t -{item[0]}: {item[1]['stats']['diff_chars_spaces']}" for item in
                           sorted_by_diff[-2:]]
             print("".join(output_pos))
             # print(f"Files to check:\n {[item[0] for item in sorted_by_diff_tokens[:2]]}")
@@ -220,6 +220,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compare two PDFAlto runs.")
     parser.add_argument('--run1', required=True, help='Path to first PDFAlto output directory')
     parser.add_argument('--run2', required=True, help='Path to second PDFAlto output directory')
+    parser.add_argument('--sorted-differences', action='store_true',
+                        help='Find the greatest differences in characters and tokens between the two runs')
     args = parser.parse_args()
 
     pdfalto_A = args.run1
@@ -252,3 +254,6 @@ if __name__ == "__main__":
 
     print_markdown_table("Matching Documents", matching_table)
     print_markdown_table("Differences (Averages)", diff_table)
+
+    if args.sorted_differences:
+        print_largest_differences(documents_output)
